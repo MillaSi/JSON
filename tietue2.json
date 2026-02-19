@@ -1,0 +1,21 @@
+{
+    "otsikko": "JSON-datan käsittelyä",
+    "kuvaus": "Tällä sivustolle haetaan JSON-muotoista dataa",
+    "kuva": "https://www.haaga-helia.fi/sites/default/files/styles/embedded_media_16_10_max_978_x_611/public/image/2020-08/tietojenkasittelynkoulutus.jpg?itok=9d9DFTwQ",
+
+    "opintojakso": {	  
+        "nimi": "Digitekniikat",
+        "osallistujat": 5,
+        "ajankohta": "13.1-14.3.2026",
+        "kesto": "8 viikkoa" 
+        },
+
+    "osallistujat": [	  
+        "Kosti Koodaaja",
+        "Oona Ohjelmoija",
+        "Kaino Kehittäjä",
+        "Dennis Devaaja",
+        "Sanni Softaaja"
+        ]
+ 
+}
