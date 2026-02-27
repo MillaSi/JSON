@@ -10,7 +10,36 @@
     <title>Pokemon-haku</title>
 </head>
 
-<body class="p-4">
+<body>
+
+        <!-- Navigaatio -->
+        <nav class="navbar navbar-expand-sm navbar-custom justify-content-center">
+            <div class=" container-fluid">
+                <a class="navbar-brand" href="#">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="visually-hidden">Toggle navigation</span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Etusivu Tehtävä I osa I</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tehtava1osa2.html">Tehtävä I osa II</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="tehtava2osa1.html">Tehtävä II osa I</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="vastaus"></div>
 
     
 <h1>Pokemon-haku</h1>
@@ -47,7 +76,7 @@
             });
     }
 
-    <!-- Pokemonin kuvan hakeminen -->
+    // Pokemonin kuvan hakeminen 
     function pokekuva(obj, name, pokeName) {
         let front = obj.sprites.front_default;
 
@@ -57,12 +86,12 @@
         document.getElementById("kuva3").innerHTML = "";
         document.getElementById("lisatiedot").innerHTML = "";
 
-        <!-- Tallennetaan haettu Pokemonin nimi -->
+        // Tallennetaan haettu Pokemonin nimi
         window.lastPokeName = pokeName;
         window.lastShownName = name;
     }
 
-<!-- Turn-painikkeen funktio, joka hakee käännetyn Pokemonin kuvan-->>
+//Turn-painikkeen funktio, joka hakee käännetyn Pokemonin kuvan
     function turn() {
         const pokeName = window.lastPokeName;
         const name = window.lastShownName;
