@@ -59,10 +59,11 @@
                 let tuuli=data.wind.speed;
 
     
-                document.getElementById("vastaus").innerHTML=`Helsingissä on ${now} kello ${time} <br>
-                ${kuvaus}.<br> 
-                Lämpötila ${lampotila}°C<br> 
-                Tuulen nopeus ${tuuli} m/s.<br>`;
+                document.getElementById("vastaus").innerHTML="Helsingissä on " 
+                + now + " kello " + time + "<br>" +
+                kuvaus + ".<br>" +
+                "Lämpötila " + lampotila + "°C<br>" +
+                "Tuulen nopeus " + tuuli + " m/s.<br>";
             })
             </script>
         
