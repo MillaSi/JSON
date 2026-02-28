@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
-    <title>JSON-tehtävä</title>
+    <title>Tehtävä III - Sää Helsingissä</title>
 </head>
 
 <body>
@@ -33,48 +33,41 @@
                          <li class="nav-item">
                             <a class="nav-link" href="tehtava2osa1.html">Tehtävä II osa I</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="tehtava3.html">Tehtävä III</a>
-                        </li>
 
                     </ul>
                 </div>
             </div>
         </nav>
 
+        <h1 class="text-center">Sää Helsingissä</h1>
         <div id="vastaus"></div>
+        
 
         <!-- JSON -->
     <script>
-        fetch('tietue2.json')
-        .then(function (response) {
-            return response.json();
-        })
-
-        .then(function (responsejson) {
-            kerro(responsejson);
-        })
-
-        .catch(function (error) {
-            document.getElementById("vastaus").innerHTML = "<p>Virhe ladattaessa sisältöä.</p>"; 
-        })
+        fetch(`https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric`)
+        .then(response => response.json())
+        .then(data => {
+            const now = new Date().toLocaleDateString("fi-Fi");
+            const time = new Date().toLocaleTimeString("fi-Fi");
         
-        function kerro(obj) {
-            let tiedot = "<h1>" + obj.opintojakso.nimi + "</h1><br>" + "<p><img src='" + obj.kuva + "'></p>" +
-            "<h2>" + "Opintojakso" + "</h2>" + "Nimi: " + obj.opintojakso.nimi + "<br>" +
-            "Toteutus: " + obj.opintojakso.ajankohta + "<br>" +
-            "Kesto: " + obj.opintojakso.kesto + "<br><hr>" ;
-            tiedot+= "<p> Osallistujat </p>"; 
+        
+                let kuvaus=data.weather[0].description;
+                let lampotila=data.main.temp;
+                let tuuli=data.wind.speed;
 
-                for (var i = 0; i < obj.osallistujat.length; i++) {
-                    tiedot += obj.osallistujat[i] + "<br>";
-                } 
-                tiedot += "</p>";
-                document.getElementById("vastaus").innerHTML = tiedot;
-        }
+    
+                document.getElementById("vastaus").innerHTML=`Helsingissä on ${now} kello ${time} <br>
+                ${kuvaus}.<br> 
+                Lämpötila ${lampotila}°C<br> 
+                Tuulen nopeus ${tuuli} m/s.<br>`;
+            })
+            </script>
+        
+        
+        
 
 
-    </script>
 
     </body>
     </html>
